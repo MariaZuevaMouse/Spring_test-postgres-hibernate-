@@ -1,19 +1,14 @@
 package com.company.mz.mortgage.controller;
 
-import com.company.mz.mortgage.entity.MortgageApplication;
-import com.company.mz.mortgage.entity.Resolution;
 import com.company.mz.mortgage.model.MortgageList;
 import com.company.mz.mortgage.model.MortgageRequest;
 import com.company.mz.mortgage.model.MortgageResponse;
-import com.company.mz.mortgage.repository.MortgageApplicationRepository;
 import com.company.mz.mortgage.repository.MortgageManualRepository;
 import com.company.mz.mortgage.services.MortgageService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 public class MortgageController {
@@ -63,7 +58,7 @@ public class MortgageController {
 
 //
 /*
-* bad approach, methods should be in service
+* -- ! bad approach, methods should be in service
 * @GetMapping("/mortgages")
     public MortgageList getAll(){
         return  new MortgageList(repository.findAll());

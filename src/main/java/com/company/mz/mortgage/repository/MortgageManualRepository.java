@@ -1,19 +1,10 @@
 package com.company.mz.mortgage.repository;
 
-import com.company.mz.mortgage.MortgageApp;
 import com.company.mz.mortgage.entity.MortgageApplication;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository

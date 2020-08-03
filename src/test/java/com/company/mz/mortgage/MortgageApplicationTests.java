@@ -13,6 +13,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.Arrays;
 import java.util.List;
 
+import static com.company.mz.mortgage.entity.Resolution.TERRORIST;
+
 @SpringBootTest
 class MortgageApplicationTests {
 	@Autowired
@@ -28,7 +30,7 @@ class MortgageApplicationTests {
 				new MortgageApplication("Curpatova Helen", Resolution.SUCCESSFUL),
 				new MortgageApplication("Monika Vang", Resolution.SUCCESSFUL),
 				new MortgageApplication("Emily Brent", Resolution.SUCCESSFUL),
-				new MortgageApplication("Professor Moriarty", Resolution.TERRORIST)
+				new MortgageApplication("Professor Moriarty", TERRORIST)
 		);
 		repository.saveAll(applicationList);
 	}
@@ -37,6 +39,12 @@ class MortgageApplicationTests {
 	void contextLoads() {
 		List<MortgageApplication> al = manualRepository.getAllSuccessful();
 		Assertions.assertThat(al.size()==5);
+	}
+
+	@Test
+	void checkStatus() {
+		List<MortgageApplication> al = repository.getAllByResolutionEquals(TERRORIST);
+		Assertions.assertThat(al.size() == 1);
 	}
 
 }
